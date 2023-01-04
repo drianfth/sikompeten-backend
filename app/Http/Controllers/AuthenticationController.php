@@ -26,6 +26,9 @@ class AuthenticationController extends Controller
             ]);
         }
 
+        // $token = $user->createToken('user login')->plainTextToken;
+
+        // return response()->json(["token" => $token]);
         return $user->createToken('user login')->plainTextToken;
     }
 
@@ -39,7 +42,7 @@ class AuthenticationController extends Controller
 
     public function register(Request $request){
         $data = $request->validate([
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
             'name' => 'required',
             'jns_kelamin' => 'required',
@@ -49,7 +52,8 @@ class AuthenticationController extends Controller
         $data['password'] = Hash::make($data['password']); 
 
         $user = User::create($data);
-        return response()->json($user);
+        
+        return response()->json($data);
 
     }
 }

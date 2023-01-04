@@ -11,9 +11,6 @@ class SchemaController extends Controller
     public function index()
     {
         $schema = Schema::all();
-        return response()->json([
-            'status' => '200 ok',
-            'data' => $schema,
-        ]);
+        return response()->json($schema);
     }
 }
