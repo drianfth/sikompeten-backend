@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -22,14 +23,17 @@ class AuthenticationController extends Controller
 
         if (! $user || ! Hash::check($request->password, $user->password)) {
             throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
+                'email' => ['email dan password tidak cocok'],
             ]);
         }
 
-        // $token = $user->createToken('user login')->plainTextToken;
+        $token = $user->createToken('user login')->plainTextToken;
 
         // return response()->json(["token" => $token]);
-        return $user->createToken('user login')->plainTextToken;
+        return response()->json([
+            "message"=> "Successfully logged in",
+            'token' => $token
+        ], Response::HTTP_OK);
     }
 
     public function logout(Request $request){
@@ -37,7 +41,9 @@ class AuthenticationController extends Controller
     }
 
     public function me(Request $request){
-        return response()->json(Auth::user());
+        return response()->json([
+            'user' => auth()->user()
+        ],Response::HTTP_OK);
     }
 
     public function register(Request $request){

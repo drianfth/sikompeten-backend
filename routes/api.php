@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\SchemaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,8 +21,16 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
  
-Route::get('/schema', [SchemaController::class,'index'])->middleware(['auth:sanctum']);
 Route::post('/login', [AuthenticationController::class,'login']);
 Route::post('/register', [AuthenticationController::class,'register']);
-Route::get('/logout', [AuthenticationController::class,'logout'])->middleware((['auth:sanctum']));
-Route::get('/me',[AuthenticationController::class,'me'])->middleware((['auth:sanctum']));
+
+
+Route::get('/schema', [SchemaController::class,'index']);
+Route::middleware(['auth:sanctum'])->group(function(){
+    Route::get('/logout', [AuthenticationController::class,'logout']);
+    Route::get('/me',[AuthenticationController::class,'me']);
+    Route::get('/jadwal',[JadwalController::class,'index']);
+    Route::put('/jadwal/{id}',[JadwalController::class,'update']);
+});
+
+
