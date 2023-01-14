@@ -12,4 +12,12 @@ class Schema extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function unit_kompetensis () {
+        return $this->hasMany(UnitKompetensi::class);
+    }
+
+    public function kelengkapans() {
+        return $this->hasMany(Kelengkapan::class);
+    }
 }

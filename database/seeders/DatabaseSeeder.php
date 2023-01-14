@@ -4,11 +4,13 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Jadwal;
 use App\Models\Schema;
-use App\Models\User;
-use Carbon\Carbon;
+use App\Models\UnitKompetensi;
 use Illuminate\Database\Seeder;
+use App\Models\KelengkapanApl01;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -27,6 +29,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        // KelengkapanApl01::create([
+        //     "name"=> "Copy transkrip nilai yang menyatakan telah lulus salah satu mata kuliah Rekayasa Perangkat Lunak, Workshop Produksi Perangkat Lunak, Manajemen Perangkat Lunak",
+        //     'schema_id'=> 1,
+        // ]);
         Schema::create([
             'name' => 'Software Quality Tester',
             'schema_sertifikasi' => 'Okupasi',
@@ -42,7 +48,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'andrian@gmail.com',
             'password' => Hash::make('password',),
             'role' => 'asesi',
-            'jns_kelamin'=> 'laki-laki',
+            'jns_kelamin'=> 'laki_laki',
             'no_telp' => "08782378232",
         ]);
         User::create([
@@ -50,7 +56,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => Hash::make('password',),
             'role' => 'admin',
-            'jns_kelamin'=> 'laki-laki',
+            'jns_kelamin'=> 'laki_laki',
             'no_telp' => "08782378232",
         ]);
         Jadwal::create([
@@ -64,5 +70,9 @@ class DatabaseSeeder extends Seeder
         Jadwal::create([
             'name' => 'Pelaksanaan Asesmen',
         ]);
+        
+        $this->call([UnitKompetensiSeeder::class,KelengkapanSeeder::class]);
     }
 }
+
+
