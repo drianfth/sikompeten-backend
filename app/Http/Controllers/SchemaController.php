@@ -16,4 +16,9 @@ class SchemaController extends Controller
         $schema = Schema::all();
         return response()->json($schema);
     }
+    public function show($id)
+    {
+        $schema = Schema::where('id',$id)->get();
+        return response()->json($schema);
+    }
 }

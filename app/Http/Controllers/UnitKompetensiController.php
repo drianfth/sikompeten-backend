@@ -11,8 +11,8 @@ use Illuminate\Http\Response;
 class UnitKompetensiController extends Controller
 {
     //
-    public function index(){
-        $unitKompetensi = UnitKompetensi::all();
+    public function index($id){
+        $unitKompetensi = UnitKompetensi::where('schema_id', $id)->get();
         return response()->json($unitKompetensi,Response::HTTP_OK);
     }
 }
