@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('schema_id');
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('paket_asesmen_id');
+            $table->boolean('konfirmasi')->default(false);
             $table->string('name');
             $table->string('kk_ktp_paspor');
             $table->string('tempat_lhr');
@@ -47,6 +49,7 @@ return new class extends Migration
 
             $table->foreign('schema_id')->references('id')->on('schemas');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('paket_asesmen_id')->references('id')->on('paket_asesmens');
 
         });
     }

@@ -71,7 +71,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Pelaksanaan Asesmen',
         ]);
         
-        $this->call([UnitKompetensiSeeder::class,KelengkapanSeeder::class]);
+        $this->call([UnitKompetensiSeeder::class,
+        KelengkapanSeeder::class,
+        PaketAsesmenSeeder::class
+    ]);
     }
 }
 

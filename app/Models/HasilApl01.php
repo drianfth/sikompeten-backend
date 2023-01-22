@@ -11,4 +11,9 @@ class HasilApl01 extends Model
     protected $guarded = [
         'id'
     ];
+
+    public function paket_asesmens () {
+        return $this->belongsTo(PaketAsesmen::class);
+    }
+
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HasilApl01Controller;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelengkapanController;
+use App\Http\Controllers\PaketAsesmenController;
 use App\Http\Controllers\SchemaController;
 use App\Http\Controllers\UnitKompetensiController;
 use App\Models\UnitKompetensi;
@@ -38,7 +39,12 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::put('/jadwal/{id}',[JadwalController::class,'update']);
     Route::get('/unit_kompetensi/{id}',[UnitKompetensiController::class,'index']);
     Route::get('/kelengkapan/{id}',[KelengkapanController::class,'index']);
+    Route::get('/hasilapl01/{id}',[HasilApl01Controller::class,'show']);
+    Route::post('/hasilapl01',[HasilApl01Controller::class,'store']);
+    Route::controller(PaketAsesmenController::class)->group(function () {
+        Route::get('/paketasesmen', 'index');
+        // Route::post('/orders', 'store');
+    });
 });
 
-Route::post('/hasilapl01',[HasilApl01Controller::class,'store']);
 

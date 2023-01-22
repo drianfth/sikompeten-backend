@@ -17,6 +17,10 @@ class Schema extends Model
         return $this->hasMany(UnitKompetensi::class);
     }
 
+    public function paket_asesmen () {
+        return $this->hasMany(PaketAsesmen::class);
+    }
+
     public function kelengkapans() {
         return $this->hasMany(Kelengkapan::class);
     }
