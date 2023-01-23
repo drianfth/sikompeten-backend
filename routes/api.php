@@ -41,9 +41,12 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/kelengkapan/{id}',[KelengkapanController::class,'index']);
     Route::get('/hasilapl01/{id}',[HasilApl01Controller::class,'show']);
     Route::post('/hasilapl01',[HasilApl01Controller::class,'store']);
+    Route::get('/asesor',[AuthenticationController::class,'showAsesor']);
     Route::controller(PaketAsesmenController::class)->group(function () {
         Route::get('/paketasesmen', 'index');
-        // Route::post('/orders', 'store');
+        Route::post('/paketasesmen', 'store');
+        Route::put('/paketasesmen/{id}', 'edit');
+        Route::delete('/paketasesmen/{id}', 'destroy');
     });
 });
 

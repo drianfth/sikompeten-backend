@@ -62,6 +62,11 @@ class AuthenticationController extends Controller
         return response()->json($data);
 
     }
+
+    public function showAsesor(){
+        $asesor = User::where('role','asesor')->get();
+        return response()->json($asesor);
+    }
 }
 
 

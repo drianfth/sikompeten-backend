@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->boolean('status')->default(false);
             $table->string('deskripsi')->nullable();
+            $table->string('href')->nullable();
             $table->date('tanggal')->nullable();
             $table->timestamps();
         });
