@@ -5,18 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UnitKompetensi extends Model
+class SubElemen extends Model
 {
     use HasFactory;
-
     protected $guarded = [
         'id'
     ];
-
+    public function elemen (){
+        return $this->belongsTo(Elemen::class);
+    }
     public function schema () {
         return $this->belongsTo(Schema::class);
-    }
-    public function elemens() {
-        return $this->hasMany(Elemen::class);
     }
 }

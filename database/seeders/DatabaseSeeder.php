@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
         ]);
         Jadwal::create([
             'name' => 'Pengisian Form APL-02',
-            'href'=> '/dashboard/apl02'
+            'href'=> '/apl02'
         ]);
         Jadwal::create([
             'name' => 'Pelaksanaan Asesmen',
@@ -59,7 +59,9 @@ class DatabaseSeeder extends Seeder
         UserSeeder::class,
         UnitKompetensiSeeder::class,
         KelengkapanSeeder::class,
-        PaketAsesmenSeeder::class
+        PaketAsesmenSeeder::class,
+        ElemenSeeder::class,
+        SubElemenSeeder::class
     ]);
     }
 }

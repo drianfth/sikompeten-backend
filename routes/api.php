@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\ElemenController;
 use App\Http\Controllers\HasilApl01Controller;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelengkapanController;
@@ -31,8 +32,6 @@ Route::post('/register', [AuthenticationController::class,'register']);
 
 
 Route::middleware(['auth:sanctum'])->group(function(){
-    Route::get('/schema', [SchemaController::class,'index']);
-    Route::get('/schema/{id}', [SchemaController::class,'show']);
     Route::get('/logout', [AuthenticationController::class,'logout']);
     Route::get('/me',[AuthenticationController::class,'me']);
     Route::get('/jadwal',[JadwalController::class,'index']);
@@ -42,11 +41,20 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/hasilapl01/{id}',[HasilApl01Controller::class,'show']);
     Route::post('/hasilapl01',[HasilApl01Controller::class,'store']);
     Route::get('/asesor',[AuthenticationController::class,'showAsesor']);
+    Route::controller(SchemaController::class)->group(function () {
+        Route::get('/schema', 'index');
+        Route::get('/schema/{id}', 'show');
+        Route::get('/whatSchema/{id}', 'showSchema');
+    });
     Route::controller(PaketAsesmenController::class)->group(function () {
         Route::get('/paketasesmen', 'index');
+        Route::get('/paketasesmen/user/{id}', 'showAllUser');
         Route::post('/paketasesmen', 'store');
         Route::put('/paketasesmen/{id}', 'edit');
         Route::delete('/paketasesmen/{id}', 'destroy');
+    });
+    Route::controller(ElemenController::class)->group(function(){
+        Route::get('/elemen/{id}','index');
     });
 });
 

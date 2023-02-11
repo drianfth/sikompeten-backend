@@ -24,4 +24,10 @@ class Schema extends Model
     public function kelengkapans() {
         return $this->hasMany(Kelengkapan::class);
     }
+    public function elemens() {
+        return $this->hasMany(Elemen::class);
+    }
+    public function sub_elemens() {
+        return $this->hasMany(Elemen::class);
+    }
 }

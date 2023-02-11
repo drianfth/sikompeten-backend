@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HasilApl01;
 use App\Models\PaketAsesmen;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -70,4 +71,10 @@ class PaketAsesmenController extends Controller
 
         return response()->json($paket);
     }
+    public function showAllUser($id) {
+        $result = HasilApl01::where('paket_asesmen_id',$id)->where('konfirmasi',0)->get();
+        return response()->json($result);
+        
+    }
 }
+
