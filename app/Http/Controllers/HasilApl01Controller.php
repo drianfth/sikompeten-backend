@@ -66,7 +66,7 @@ class HasilApl01Controller extends Controller
                 "jumlah" => $jumlah,
             ];
         });
-        $hasil =  $paket->firstWhere('jumlah','<',3);
+        $hasil =  $paket->firstWhere('jumlah','<',3); // jika data apl01 lebih dari 3 maka akan dimasukkan ke paket hasesmen yang lain 
         $data['paket_asesmen_id'] = $hasil['id'];
         $data['tgl_lahir'] = new Carbon($request->tgl_lahir);
         $result = HasilApl01::create($data);

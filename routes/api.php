@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ElemenController;
 use App\Http\Controllers\HasilApl01Controller;
+use App\Http\Controllers\HasilApl02Controller;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KelengkapanController;
 use App\Http\Controllers\PaketAsesmenController;
@@ -55,6 +56,10 @@ Route::middleware(['auth:sanctum'])->group(function(){
     });
     Route::controller(ElemenController::class)->group(function(){
         Route::get('/elemen/{id}','index');
+    });
+    Route::controller(HasilApl02Controller::class)->group(function(){
+        Route::post('/hasilapl02','store');
+        Route::get('/hasilapl02/{id}','show');
     });
 });
 
