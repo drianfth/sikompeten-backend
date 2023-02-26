@@ -20,12 +20,13 @@ class PaketAsesmenSeeder extends Seeder
         //
         PaketAsesmen::create([
             'schema_id' => 1,
-            'name' => 'Ruangan 1',
+            'name' => 'Lab GIS',
             'tanggal' => Carbon::create(2023, 3, 12, 0)
         ]);
         PaketAsesmen::create([
-            'schema_id' => 1,
-            'name' => 'Ruangan 2'
+            'schema_id' => 2,
+            'name' => 'Lab RPL',
+            'tanggal' => Carbon::create(2023, 10, 12, 0)
         ]);
     }
 }

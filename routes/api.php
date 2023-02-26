@@ -39,8 +39,6 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::put('/jadwal/{id}',[JadwalController::class,'update']);
     Route::get('/unit_kompetensi/{id}',[UnitKompetensiController::class,'index']);
     Route::get('/kelengkapan/{id}',[KelengkapanController::class,'index']);
-    Route::get('/hasilapl01/{id}',[HasilApl01Controller::class,'show']);
-    Route::post('/hasilapl01',[HasilApl01Controller::class,'store']);
     Route::get('/asesor',[AuthenticationController::class,'showAsesor']);
     Route::controller(SchemaController::class)->group(function () {
         Route::get('/schema', 'index');
@@ -60,6 +58,12 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::controller(HasilApl02Controller::class)->group(function(){
         Route::post('/hasilapl02','store');
         Route::get('/hasilapl02/{id}','show');
+    });
+    // Route::get('/hasilapl01/{id}',[HasilApl01Controller::class,'show']);
+    // Route::post('/hasilapl01',[HasilApl01Controller::class,'store']);
+    Route::controller(HasilApl01Controller::class)->group(function(){
+        Route::post('/hasilapl01','store');
+        Route::get('/hasilapl01/{id}','show');
     });
 });
 

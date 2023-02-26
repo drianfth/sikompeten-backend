@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('hasil_apl01s', function (Blueprint $table) {
-            $table->id();
+            // $table->id();
+            $table->string('id')->primary();
             $table->unsignedBigInteger('schema_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('paket_asesmen_id');
@@ -30,19 +31,20 @@ return new class extends Migration
             $table->string('email');
             $table->string('pendidikan');
             $table->string('kode_pos');
-            $table->string('perusahaan')->nullable();
-            $table->string('jabatan')->nullable();
+            $table->string('perusahaan');
+            $table->string('jabatan');
             $table->string('almt_kantor')->nullable();
             $table->string('telp_kantor')->nullable();
             $table->string('email_kantor')->nullable();
             $table->string('kode_pos_kantor')->nullable();
             $table->string('fax')->nullable();
+            $table->string('status')->default('menunggu');
             $table->string('tujuan_asesmen')->nullable();
-            $table->string('kelengkapan1')->nullable();
-            $table->string('kelengkapan2')->nullable();
-            $table->string('kelengkapan3')->nullable();
-            $table->string('kelengkapan4')->nullable();
-            $table->string('kelengkapan5')->nullable();
+            // $table->string('kelengkapan1')->nullable();
+            // $table->string('kelengkapan2')->nullable();
+            // $table->string('kelengkapan3')->nullable();
+            // $table->string('kelengkapan4')->nullable();
+            // $table->string('kelengkapan5')->nullable();
 
             $table->timestamps('');
 
