@@ -20,6 +20,19 @@ class HasilApl01Controller extends Controller
         $result = HasilApl01::where('user_id',$id)->get();
         return response()->json($result);
     }
+    public function showDetail($id) {
+        $result = HasilApl01::where('id',$id)->get();
+        // $result[0]->schema->name;
+        $result[0]->r_kelengkapans->map(function($hasil){
+            $data = [
+                'soal' => $hasil->kelengkapan,
+                'jawaban' => $hasil->jawaban_kelengkapan,
+            ];
+            return $data;
+        });
+        return response()->json($result);
+        // dd($result->toJson());
+    }
 
     public function store(Request $request){
         // $data = $request->validate([

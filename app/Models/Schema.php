@@ -24,6 +24,9 @@ class Schema extends Model
     public function kelengkapans() {
         return $this->hasMany(Kelengkapan::class);
     }
+    public function hasil_apl01s() {
+        return $this->hasMany(HasilApl01::class);
+    }
     public function elemens() {
         return $this->hasMany(Elemen::class);
     }

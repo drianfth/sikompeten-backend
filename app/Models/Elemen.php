@@ -20,4 +20,7 @@ class Elemen extends Model
     public function schema () {
         return $this->belongsTo(Schema::class);
     }
+    public function jawaban_apl02s () {
+        return $this->hasMany(JawabanApl02::class);
+    }
 }
