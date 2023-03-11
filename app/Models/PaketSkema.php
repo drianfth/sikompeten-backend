@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PaketAsesmen extends Model
+class PaketSkema extends Model
 {
     use HasFactory;
     
@@ -16,11 +16,12 @@ class PaketAsesmen extends Model
     public function schema () {
         return $this->belongsTo(Schema::class);
     }
+    public function tuk () {
+        return $this->belongsTo(Tuk::class);
+    }
 
-    public function hasil_apl01s () {
-        return $this->hasMany(HasilApl01::class);
+    public function sesis () {
+        return $this->hasMany(Sesi::class);
     }
-    public function hasil_apl02s () {
-        return $this->hasMany(HasilApl02::class);
-    }
+
 }

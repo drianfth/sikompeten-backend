@@ -16,8 +16,8 @@ class HasilApl02 extends Model
     public $incrementing = false;
     protected $keyType = 'string';
 
-    public function paket_asesmen () {
-        return $this->belongsTo(PaketAsesmen::class);
+    public function sesi () {
+        return $this->belongsTo(Sesi::class);
     }
     public function hasil_apl01 () {
         return $this->belongsTo(HasilApl01::class);

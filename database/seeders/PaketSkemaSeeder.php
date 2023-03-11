@@ -3,12 +3,13 @@
 namespace Database\Seeders;
 
 use App\Models\PaketAsesmen;
+use App\Models\PaketSkema;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
 
-class PaketAsesmenSeeder extends Seeder
+class PaketSkemaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,14 +19,19 @@ class PaketAsesmenSeeder extends Seeder
     public function run()
     {
         //
-        PaketAsesmen::create([
+        PaketSkema::create([
             'schema_id' => 1,
-            'name' => 'Lab GIS',
+            'tuk_id' => 1,
             'tanggal' => Carbon::create(2023, 3, 12, 0)
         ]);
-        PaketAsesmen::create([
+        PaketSkema::create([
+            'schema_id' => 1,
+            'tuk_id' => 2,
+            'tanggal' => Carbon::create(2023, 10, 12, 0)
+        ]);
+        PaketSkema::create([
             'schema_id' => 2,
-            'name' => 'Lab RPL',
+            'tuk_id' => 1,
             'tanggal' => Carbon::create(2023, 10, 12, 0)
         ]);
     }

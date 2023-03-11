@@ -13,17 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('paket_asesmens', function (Blueprint $table) {
+        Schema::create('paket_skemas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('schema_id');
-            $table->string('name');
+            $table->unsignedBigInteger('tuk_id');
+            // $table->string('name');
             $table->date('tanggal')->nullable();
-            $table->string('asesor1_id')->nullable();
-            $table->string('asesor2_id')->nullable();
-            $table->string('tuk')->nullable();
+            // $table->string('asesor1_id')->nullable();
+            // $table->string('asesor2_id')->nullable();
+            // $table->string('tuk')->nullable();
             $table->timestamps();
 
             $table->foreign('schema_id')->references('id')->on('schemas');
+            $table->foreign('tuk_id')->references('id')->on('tuks');
 
         });
     }
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paket_asesmens');
+        Schema::dropIfExists('paket_skemas');
     }
 };

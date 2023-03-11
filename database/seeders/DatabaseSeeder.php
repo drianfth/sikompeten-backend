@@ -51,15 +51,18 @@ class DatabaseSeeder extends Seeder
             'name' => 'Pengisian Form APL-02',
             'href'=> '/apl02'
         ]);
-        Jadwal::create([
-            'name' => 'Pelaksanaan Asesmen',
-        ]);
+        // Jadwal::create([
+        //     'name' => 'Pelaksanaan Asesmen',
+        // ]);
         
         $this->call([
         UserSeeder::class,
         UnitKompetensiSeeder::class,
         KelengkapanSeeder::class,
-        PaketAsesmenSeeder::class,
+        TukSeeder::class,
+        PaketSkemaSeeder::class,
+        SesiSeeder::class,
+        // PaketAsesmenSeeder::class,
         ElemenSeeder::class,
         SubElemenSeeder::class
     ]);
