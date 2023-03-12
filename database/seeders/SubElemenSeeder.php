@@ -432,6 +432,36 @@ class SubElemenSeeder extends Seeder
             'elemen_id' => 32,
             'name' => 'Hasil rekomendasi dikomunikasikan kepada para stakeholder.'
         ]);
+        SubElemen::create([
+            "schema_id" => 2,
+            'elemen_id' => 33,
+            'name' => 'Mengidentifikasi sistem operasi yang berjalan di Workstation'
+        ]);
+        SubElemen::create([
+            "schema_id" => 2,
+            'elemen_id' => 33,
+            'name' => 'Mengumpulkan informasi cara menginstal dan mengkonfigurasi TCP/IP pada sistem operasi  yang bersangkutan'
+        ]);
+        SubElemen::create([
+            "schema_id" => 2,
+            'elemen_id' => 34,
+            'name' => 'Mengidentifikasi subnet mask untuk jaringan.'
+        ]);
+        SubElemen::create([
+            "schema_id" => 2,
+            'elemen_id' => 34,
+            'name' => 'Mengidentifikasi IP address untuk workstation yang bersangkutan.'
+        ]);
+        SubElemen::create([
+            "schema_id" => 2,
+            'elemen_id' => 35,
+            'name' => 'Memastikan NIC sudah terdeteksi oleh sistem operasi.'
+        ]);
+        SubElemen::create([
+            "schema_id" => 2,
+            'elemen_id' => 35,
+            'name' => 'Menjalankan perintah untuk menginstalasi protokol TCP/IP. (sesuai dengan sistem operasi yang digunakan).'
+        ]);
 
     }
 }

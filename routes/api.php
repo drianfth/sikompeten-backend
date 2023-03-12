@@ -61,25 +61,27 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::put('/paketskema/{id}', 'edit');
         Route::delete('/paketskema/{id}', 'destroy');
     });
-    Route::controller(SchemaController::class)->group(function () {
-        Route::get('/schema', 'index');
-        Route::get('/schema/{id}', 'show');
-        Route::get('/whatSchema/{id}', 'showSchema');
-    });
+
     Route::controller(TukController::class)->group(function(){
         Route::get('/tuk','index');
     });
-    Route::controller(HasilApl01Controller::class)->group(function(){
-        Route::post('/hasilapl01','store');
-        Route::get('/hasilapl01/{id}','show');
-        Route::put('/hasilapl01/{id}', 'edit');
-        Route::get('/hasilapl01lengkap/{id}','showDetail');
-    });
+
     Route::controller(SesiController::class)->group(function(){
         Route::get('/sesi/{id}','show');
         Route::post('/sesi', 'store');
         Route::delete('/sesi/{id}', 'destroy');
         Route::get('/sesi/peserta/{id}', 'showPeserta');
     
+    });
+    Route::controller(SchemaController::class)->group(function () {
+        Route::get('/schema', 'index');
+        Route::get('/schema/{id}', 'show');
+        Route::get('/whatSchema/{id}', 'showSchema');
+    });
+    Route::controller(HasilApl01Controller::class)->group(function(){
+        Route::post('/hasilapl01','store');
+        Route::get('/hasilapl01/{id}','show');
+        Route::put('/hasilapl01/{id}', 'edit');
+        Route::get('/hasilapl01lengkap/{id}','showDetail');
     });
 });    

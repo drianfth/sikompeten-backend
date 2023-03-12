@@ -36,19 +36,19 @@ class DatabaseSeeder extends Seeder
             "nomor" => 'SS-31-SQT-00-2022'
         ]);
         Schema::create([
-            'name' => 'Web Dinamis',
+            'name' => 'Instalasi Jaringan Lokal (LAN)',
             'schema_sertifikasi' => 'Okupasi',
             "nomor" => 'SS-32-SQT-00-2022'
         ]);
        
         Jadwal::create([
-            'name' => 'Pilih Skema & Pengisian Form APL-01',
+            'name' => 'Pra-Asesmen',
             'tanggal' => Carbon::create(2023, 3, 12, 0),
             'status' => true,
             'href'=> '/dashboard/apl01'
         ]);
         Jadwal::create([
-            'name' => 'Pengisian Form APL-02',
+            'name' => 'Asesmen',
             'href'=> '/apl02'
         ]);
         // Jadwal::create([

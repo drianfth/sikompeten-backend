@@ -19,7 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('schema_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('sesi_id');
-            $table->string('name'); 
+            $table->string('hasil_apl01_id');
+            // $table->string('name'); 
             $table->boolean('konfirmasi')->default(false);
             $table->string('status')->default('menunggu');
            
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->foreign('schema_id')->references('id')->on('schemas');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('sesi_id')->references('id')->on('sesis');
+            $table->foreign('hasil_apl01_id')->references('id')->on('hasil_apl01s');
         });
     }
 

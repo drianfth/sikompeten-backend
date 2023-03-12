@@ -180,5 +180,20 @@ class ElemenSeeder extends Seeder
             'unit_kompetensi_id' => 11,
             'name'=> 'Mentrasfer pengalaman penjaminan kualitas perangkat lunak',
         ]);
+        Elemen::create([
+            "schema_id" => 2,
+            'unit_kompetensi_id' => 1,
+            'name'=> 'Mengidentifikasi Workstation',
+        ]);
+        Elemen::create([
+            "schema_id" => 2,
+            'unit_kompetensi_id' => 2,
+            'name'=> 'Mengumpulkan informasi internetworking',
+        ]);
+        Elemen::create([
+            "schema_id" => 2,
+            'unit_kompetensi_id' => 3,
+            'name'=> 'Menginstal protokol TCP/IP',
+        ]);
     }
 }

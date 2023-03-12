@@ -35,5 +35,13 @@ class KelengkapanSeeder extends Seeder
             "name"=> "Fotocopy KTP",
             
         ]);
+        Kelengkapan::create([
+            'schema_id'=> 2,
+            "name"=> "Transkrip nilai yang mencantumkan mata kuliah Jaringan Komputer",
+        ]);
+        Kelengkapan::create([
+            'schema_id'=> 2,
+            "name"=> "Transkrip nilai yang mencantumkan mata kuliah Sistem Operasi",
+        ]);
     }
 }

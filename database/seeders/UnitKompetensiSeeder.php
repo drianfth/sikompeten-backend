@@ -92,5 +92,26 @@ class UnitKompetensiSeeder extends Seeder
             'pertanyaan' => 'Dapatkah Saya Menyusun Rekomendasi Penjaminan Kualitas Perangkat Lunak bagi Stakeholder?',
             "jenis_standar"=> "SKKNI"
         ]);
+        UnitKompetensi::create([
+            "schema_id" => 2,
+            "kode_unit"=> "TIK.JK02.001.01",
+            "judul_unit"=> "Membuat desain jaringan lokal (LAN)",
+            'pertanyaan' => 'Dapatkah Saya Menyusun Rekomendasi Penjaminan Kualitas Perangkat Lunak bagi Stakeholder?',
+            "jenis_standar"=> "SKKNI"
+        ]);
+        UnitKompetensi::create([
+            "schema_id" => 2,
+            "kode_unit"=> "TIK.JK02.005.01",
+            "judul_unit"=> "Memasang kabel UTP dan BNC pada jaringan",
+            'pertanyaan' => 'Dapatkah Saya Menyusun Rekomendasi Penjaminan Kualitas Perangkat Lunak bagi Stakeholder?',
+            "jenis_standar"=> "SKKNI"
+        ]);
+        UnitKompetensi::create([
+            "schema_id" => 2,
+            "kode_unit"=> "TIK.JK02.007.01",
+            "judul_unit"=> "Memasang jaringan nirkabel",
+            'pertanyaan' => 'Dapatkah Saya Menyusun Rekomendasi Penjaminan Kualitas Perangkat Lunak bagi Stakeholder?',
+            "jenis_standar"=> "SKKNI"
+        ]);
     }
 }

@@ -40,7 +40,7 @@ return new class extends Migration
             $table->string('fax')->nullable();
             $table->string('status')->default('menunggu');
             $table->string('tujuan_asesmen')->nullable();
-            // $table->string('kelengkapan1')->nullable();
+            $table->string('link');
             // $table->string('kelengkapan2')->nullable();
             // $table->string('kelengkapan3')->nullable();
             // $table->string('kelengkapan4')->nullable();
