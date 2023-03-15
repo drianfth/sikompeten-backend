@@ -15,6 +15,6 @@ class JawabanApl02 extends Model
         return $this->belongsTo(HasilApl02::class);
     }
     public function elemen () {
-        return $this->belongsTo(HasilApl02::class);
+        return $this->belongsTo(Elemen::class);
     }
 }

@@ -77,8 +77,6 @@ class HasilApl01Controller extends Controller
 
     public function edit(Request $request,$id){
         $data = collect($request)->toArray();
-        // $data['tanggal'] = new Carbon($request->tanggal);
-        // $data['deskripsi'] = $request->deskripsi;
         $result = HasilApl01::findOrFail($id);
         $result->update($data);
 

@@ -25,4 +25,7 @@ class HasilApl02 extends Model
     public function jawaban_apl02s () {
         return $this->hasMany(JawabanApl02::class);
     }
+    public function schema () {
+        return $this->belongsTo(Schema::class);
+    }
 }

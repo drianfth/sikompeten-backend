@@ -49,10 +49,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::controller(ElemenController::class)->group(function(){
         Route::get('/elemen/{id}','index');
     });
-    Route::controller(HasilApl02Controller::class)->group(function(){
-        Route::post('/hasilapl02','store');
-        Route::get('/hasilapl02/{id}','show');
-    });
+
 
     Route::controller(PaketSkemaController::class)->group(function () {
         Route::get('/paketskema', 'index');
@@ -83,5 +80,11 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/hasilapl01/{id}','show');
         Route::put('/hasilapl01/{id}', 'edit');
         Route::get('/hasilapl01lengkap/{id}','showDetail');
+    });
+    Route::controller(HasilApl02Controller::class)->group(function(){
+        Route::post('/hasilapl02','store');
+        Route::get('/hasilapl02/{id}','show');
+        Route::put('/hasilapl02/{id}', 'edit');
+        Route::get('/hasilapl02lengkap/{id}','showDetail');
     });
 });    

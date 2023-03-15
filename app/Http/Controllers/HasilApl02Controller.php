@@ -127,4 +127,23 @@ class HasilApl02Controller extends Controller
         $result = HasilApl02::where('user_id',$id)->get();
         return response()->json($result);
     }
+
+    public function showDetail($id) {
+        $result = HasilApl02::where('hasil_apl01_id',$id)->get();
+        $result[0]->jawaban_apl02s->map(function($jawaban){
+            $jawaban->elemen->sub_elemens;
+            $jawaban->elemen->unit_kompetensi;
+        });
+        $result[0]->schema;
+        return response()->json($result);
+    }
+
+    public function edit(Request $request,$id){
+        $data = collect($request)->toArray();
+        $result = HasilApl02::findOrFail($id);
+        $result->update($data);
+
+        return response()->json($result);
+
+    }
 }
