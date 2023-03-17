@@ -14,6 +14,11 @@ class SesiController extends Controller
         $sesi = Sesi::where('paket_skema_id',$id)->get();
         return response()->json($sesi);
     }
+    public function showNow ($id) {
+        $sesi = Sesi::where('id',$id)->get();
+        $sesi[0]->paket_skema->schema;
+        return response()->json($sesi);
+    }
     public function store(Request $request){
         $data = $request->validate([
             'paket_skema_id'=> 'required',
@@ -34,5 +39,19 @@ class SesiController extends Controller
     public function showPeserta($id){
         $apl01 = HasilApl01::where('sesi_id',$id)->get();
         return response()->json($apl01);
+    }
+    public function edit(Request $request,$id){
+
+        $data = $request->validate([
+            'paket_skema_id'=> 'required',
+            'nama_sesi'=> 'required',
+            'jam'=> 'required',
+            'asesor1_id' => '',
+            'asesor2_id' => ''
+        ]);
+        $paket = Sesi::findOrFail($id);
+        $paket->update($data);
+
+        return response()->json($paket);
     }
 }

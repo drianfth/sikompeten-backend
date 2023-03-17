@@ -13,6 +13,7 @@ use App\Http\Controllers\PaketSkemaController;
 use App\Http\Controllers\KelengkapanController;
 use App\Http\Controllers\PaketAsesmenController;
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\HasilAk01Controller;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\UnitKompetensiController;
@@ -44,6 +45,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/unit_kompetensi/{id}',[UnitKompetensiController::class,'index']);
     Route::get('/kelengkapan/{id}',[KelengkapanController::class,'index']);
     Route::get('/asesor',[AuthenticationController::class,'showAsesor']);
+    Route::get('/whoUser/{id}',[AuthenticationController::class,'showUser']);
 
 
     Route::controller(ElemenController::class)->group(function(){
@@ -65,7 +67,9 @@ Route::middleware(['auth:sanctum'])->group(function(){
 
     Route::controller(SesiController::class)->group(function(){
         Route::get('/sesi/{id}','show');
+        Route::get('/whosesi/{id}','showNow');
         Route::post('/sesi', 'store');
+        Route::put('/sesi/{id}', 'edit');
         Route::delete('/sesi/{id}', 'destroy');
         Route::get('/sesi/peserta/{id}', 'showPeserta');
     
@@ -88,3 +92,10 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/hasilapl02lengkap/{id}','showDetail');
     });
 });    
+
+Route::controller(HasilAk01Controller::class)->group(function(){
+    Route::post('/hasilak01','store');
+    // Route::get('/hasilapl02/{id}','show');
+    // Route::put('/hasilapl02/{id}', 'edit');
+    // Route::get('/hasilapl02lengkap/{id}','showDetail');
+});
