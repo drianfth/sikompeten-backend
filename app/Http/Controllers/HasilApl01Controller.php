@@ -23,6 +23,8 @@ class HasilApl01Controller extends Controller
     public function showDetail($id) {
         $result = HasilApl01::where('id',$id)->get();
         $result[0]->schema;
+        $result[0]->sesi->asesor1;
+        $result[0]->sesi->asesor2;
         $result[0]->r_kelengkapans->map(function($hasil){
             $data = [
                 'soal' => $hasil->kelengkapan,
@@ -55,7 +57,7 @@ class HasilApl01Controller extends Controller
         });
         
         for ($i=0; $i < $sesi->count(); $i++) { 
-            $hasil =  $sesi[$i]->firstWhere('jumlah','<',2); // jika data apl01 lebih dari 3 maka akan dimasukkan ke paket hasesmen yang lain 
+            $hasil =  $sesi[$i]->firstWhere('jumlah','<',20); // jika data apl01 lebih dari 3 maka akan dimasukkan ke paket hasesmen yang lain 
             if ($hasil != 0) {
                 break;
             }

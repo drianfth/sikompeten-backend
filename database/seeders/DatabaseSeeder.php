@@ -49,7 +49,8 @@ class DatabaseSeeder extends Seeder
         ]);
         Jadwal::create([
             'name' => 'Asesmen',
-            'href'=> '/apl02'
+            'href'=> '/apl02',
+            'status' => true,
         ]);
         // Jadwal::create([
         //     'name' => 'Pelaksanaan Asesmen',

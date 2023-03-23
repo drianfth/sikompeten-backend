@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('schema_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('sesi_id');
+            $table->unsignedBigInteger('asesor_id')->nullable();
             $table->boolean('konfirmasi')->default(false);
             $table->string('name');
             $table->string('kk_ktp_paspor');
@@ -52,6 +53,7 @@ return new class extends Migration
             $table->foreign('schema_id')->references('id')->on('schemas');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('sesi_id')->references('id')->on('sesis');
+            $table->foreign('asesor_id')->references('id')->on('users');
 
         });
     }

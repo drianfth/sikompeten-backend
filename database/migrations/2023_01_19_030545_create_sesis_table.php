@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('asesor2_id')->nullable();
             $table->string('nama_sesi');
             $table->string('jam');
+            $table->boolean('open')->default(false);
 
             $table->timestamps();
             $table->foreign('paket_skema_id')->references('id')->on('paket_skemas');

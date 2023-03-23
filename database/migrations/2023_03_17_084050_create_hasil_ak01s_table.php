@@ -19,12 +19,13 @@ return new class extends Migration
             $table->unsignedBigInteger('asesi_id')->nullable();
             $table->unsignedBigInteger('sesi_id');
             $table->boolean('konfirmasi_asesi')->default(false);
+            $table->string('bukti');
+            $table->string('tuk');
             $table->timestamps();
 
             $table->foreign('asesor_id')->references('id')->on('users');
             $table->foreign('asesi_id')->references('id')->on('users');
             $table->foreign('sesi_id')->references('id')->on('sesis');
-
         });
     }
 

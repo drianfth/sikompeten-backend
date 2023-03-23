@@ -83,6 +83,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::post('/hasilapl01','store');
         Route::get('/hasilapl01/{id}','show');
         Route::put('/hasilapl01/{id}', 'edit');
+        Route::put('/assignAsesor/{id}', 'assign');
         Route::get('/hasilapl01lengkap/{id}','showDetail');
     });
     Route::controller(HasilApl02Controller::class)->group(function(){
@@ -92,10 +93,9 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/hasilapl02lengkap/{id}','showDetail');
     });
 });    
-
 Route::controller(HasilAk01Controller::class)->group(function(){
     Route::post('/hasilak01','store');
-    // Route::get('/hasilapl02/{id}','show');
-    // Route::put('/hasilapl02/{id}', 'edit');
-    // Route::get('/hasilapl02lengkap/{id}','showDetail');
+    Route::put('/hasilak01/{id}', 'edit');
+    Route::get('/checkhasilak01/{id1}/{id2}','check');
+    Route::get('/hasilak01/{id}','show');
 });

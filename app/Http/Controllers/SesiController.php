@@ -17,6 +17,7 @@ class SesiController extends Controller
     public function showNow ($id) {
         $sesi = Sesi::where('id',$id)->get();
         $sesi[0]->paket_skema->schema;
+        $sesi[0]->paket_skema->tuk;
         return response()->json($sesi);
     }
     public function store(Request $request){
@@ -46,6 +47,7 @@ class SesiController extends Controller
             'paket_skema_id'=> 'required',
             'nama_sesi'=> 'required',
             'jam'=> 'required',
+            'open' => '',
             'asesor1_id' => '',
             'asesor2_id' => ''
         ]);

@@ -18,12 +18,16 @@ class HasilApl01 extends Model
     public function sesi () {
         return $this->belongsTo(Sesi::class);
     }
-
     public function schema () {
         return $this->belongsTo(Schema::class);
     }
+
     public function r_kelengkapans () {
         return $this->hasMany(RKelengkapan::class);
+    }
+    
+    public function asesor_id () {
+        return $this->belongsTo(User::class);
     }
     public function hasil_apl02 () {
         return $this->hasOne(HasilApl02::class);

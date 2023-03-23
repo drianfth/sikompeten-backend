@@ -14,4 +14,10 @@ class HasilAk01 extends Model
     public function jawaban_bukti_ak01s () {
         return $this->hasMany(JawabanBuktiAk01::class);
     }
+    public function sesi () {
+        return $this->belongsTo(Sesi::class);
+    }
+    public function asesor () {
+        return $this->belongsTo(User::class);
+    }
 }
