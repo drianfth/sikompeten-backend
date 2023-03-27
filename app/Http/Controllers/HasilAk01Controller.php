@@ -13,13 +13,14 @@ class HasilAk01Controller extends Controller
 
     public function store(Request $request){
         $data = collect($request)->toArray();
-        $apl01 = HasilApl01::where('sesi_id',$data['sesi_id'])->where('asesor_id',$data['asesor_id'])->get(['user_id']);
+        $apl01 = HasilApl01::where('sesi_id',$data['sesi_id'])->where('asesor_id',$data['asesor_id'])->get(['user_id','id']);
         $createMultipleAk01 = array(); 
 
         for ($i=0; $i <$apl01->count() ; $i++) { 
             array_push($createMultipleAk01,[
                 'asesor_id'=> $data['asesor_id'],
                 'asesi_id' => $apl01[$i]['user_id'],
+                'hasil_apl01_id' => $apl01[$i]['id'],
                 'sesi_id' => $data['sesi_id'],
                 'tuk' => $data['tuk'],
                 'bukti' => $data['bukti'],
@@ -46,6 +47,15 @@ class HasilAk01Controller extends Controller
         $result[0]->sesi->paket_skema->schema;
         $result[0]->sesi->paket_skema->tuk;
         $result[0]->asesor;
+        return response()->json($result);
+    }
+    public function detail($id){
+        $result = HasilAk01::where('hasil_apl01_id',$id)->get();
+        // dd($result);
+        $result[0]->sesi->paket_skema->schema;
+        $result[0]->sesi->paket_skema->tuk;
+        $result[0]->asesor;
+        $result[0]->asesi;
         return response()->json($result);
     }
 

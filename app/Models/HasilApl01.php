@@ -32,5 +32,8 @@ class HasilApl01 extends Model
     public function hasil_apl02 () {
         return $this->hasOne(HasilApl02::class);
     }
+    public function hasil_ak01 () {
+        return $this->hasOne(HasilAk01::class);
+    }
 
 }

@@ -14,6 +14,7 @@ use App\Http\Controllers\KelengkapanController;
 use App\Http\Controllers\PaketAsesmenController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HasilAk01Controller;
+use App\Http\Controllers\HasilIa01Controller;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\UnitKompetensiController;
@@ -74,11 +75,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/sesi/peserta/{id}', 'showPeserta');
     
     });
-    Route::controller(SchemaController::class)->group(function () {
-        Route::get('/schema', 'index');
-        Route::get('/schema/{id}', 'show');
-        Route::get('/whatSchema/{id}', 'showSchema');
-    });
+
     Route::controller(HasilApl01Controller::class)->group(function(){
         Route::post('/hasilapl01','store');
         Route::get('/hasilapl01/{id}','show');
@@ -92,10 +89,21 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::put('/hasilapl02/{id}', 'edit');
         Route::get('/hasilapl02lengkap/{id}','showDetail');
     });
-});    
-Route::controller(HasilAk01Controller::class)->group(function(){
-    Route::post('/hasilak01','store');
-    Route::put('/hasilak01/{id}', 'edit');
-    Route::get('/checkhasilak01/{id1}/{id2}','check');
-    Route::get('/hasilak01/{id}','show');
-});
+    Route::controller(HasilAk01Controller::class)->group(function(){
+        Route::post('/hasilak01','store');
+        Route::put('/hasilak01/{id}', 'edit');
+        Route::get('/checkhasilak01/{id1}/{id2}','check');
+        Route::get('/hasilak01/{id}','show');
+        Route::get('/detail-ak01/{id}','detail');
+    });
+    Route::controller(HasilIa01Controller::class)->group(function(){
+        Route::post('hasilia01','store');
+    });
+    Route::controller(SchemaController::class)->group(function () {
+        Route::get('/schema', 'index');
+        Route::get('/schema/{id}', 'show');
+        Route::get('/whatSchema/{id}', 'showSchema');
+        Route::get('/turunanSkema/{id}', 'detailSchema');
+    });
+});  
+

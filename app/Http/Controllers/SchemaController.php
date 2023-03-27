@@ -26,6 +26,14 @@ class SchemaController extends Controller
         $idHasil = HasilApl01::where('konfirmasi',0)->where('user_id',$id)->pluck('schema_id');
         $schema = Schema::where('id',$idHasil)->get();
         return response()->json($schema);
-        
+    }
+    public function detailSchema($id){
+        $result = Schema::where('id',$id)->get();
+        $result[0]->unit_kompetensis->map(function($unit_kompetensi){
+            $unit_kompetensi->elemens->map(function($elemen){
+                $elemen->sub_elemens;
+            });
+        });
+        return response()->json($result);
     }
 }

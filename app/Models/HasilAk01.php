@@ -20,4 +20,10 @@ class HasilAk01 extends Model
     public function asesor () {
         return $this->belongsTo(User::class);
     }
+    public function asesi () {
+        return $this->belongsTo(User::class);
+    }
+    public function hasil_apl01 () {
+        return $this->belongsTo(HasilApl01::class);
+    }
 }

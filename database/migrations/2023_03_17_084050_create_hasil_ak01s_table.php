@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('asesor_id');
             $table->unsignedBigInteger('asesi_id')->nullable();
+            $table->string('hasil_apl01_id')->nullable();
             $table->unsignedBigInteger('sesi_id');
             $table->boolean('konfirmasi_asesi')->default(false);
             $table->string('bukti');
@@ -26,6 +27,8 @@ return new class extends Migration
             $table->foreign('asesor_id')->references('id')->on('users');
             $table->foreign('asesi_id')->references('id')->on('users');
             $table->foreign('sesi_id')->references('id')->on('sesis');
+            $table->foreign('hasil_apl01_id')->references('id')->on('hasil_apl01s');
+
         });
     }
 
