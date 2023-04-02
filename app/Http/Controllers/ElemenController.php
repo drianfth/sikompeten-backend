@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Schema;
+use App\Models\SubElemen;
 use Illuminate\Http\Request;
 
 class ElemenController extends Controller
@@ -16,6 +17,14 @@ class ElemenController extends Controller
                 'sub_elemens' => $elemen->sub_elemens
             ];
             return $data;
+        });
+        return response()->json($result);
+    }
+
+    public function showSubElemen($id){
+        $result = SubElemen::where('schema_id',$id)->get();
+        $result->map(function ($subElemen){
+            $subElemen->elemen->unit_kompetensi;
         });
         return response()->json($result);
     }

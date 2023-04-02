@@ -16,9 +16,9 @@ class JawabanIa01 extends Model
     public function hasil_ia02(){
         return $this->belongsTo(HasilIa01::class);
     }
+    
     public function sub_elemen(){
         return $this->belongsTo(SubElemen::class);
     }
-
 
 }

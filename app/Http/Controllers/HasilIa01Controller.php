@@ -39,4 +39,17 @@ class HasilIa01Controller extends Controller
         $result_sop = JawabanSop::insert($multipleJawabanIa01Sop);
         return response()->json($result_sop);
     }
+    public function show($id){
+        $result = HasilIa01::where('hasil_apl01_id',$id)->get();
+        $result[0]->hasil_ak01;
+        $result[0]->hasil_apl01;
+        $result[0]->sesi->paket_skema;
+        $result[0]->jawaban_sops->map(function($sop){
+            $sop->elemen;
+        });
+        $result[0]->jawaban_ia01s->map(function($jawab){
+            $jawab->sub_elemen->elemen->unit_kompetensi;
+        });
+        return response()->json($result);
+    }
 }

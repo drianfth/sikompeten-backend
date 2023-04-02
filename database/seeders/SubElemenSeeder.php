@@ -54,11 +54,6 @@ class SubElemenSeeder extends Seeder
         SubElemen::create([
             "schema_id" => 1,
             'elemen_id' => 3,
-            'name' => ''
-        ]);
-        SubElemen::create([
-            "schema_id" => 1,
-            'elemen_id' => 3,
             'name' => 'Acuan yang telah ditentukan didokumentasikan sesuai standar yang berlaku untuk dipergunakan pada proses berikutnya.'
         ]);
         SubElemen::create([

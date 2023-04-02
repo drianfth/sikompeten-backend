@@ -49,18 +49,10 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/whoUser/{id}',[AuthenticationController::class,'showUser']);
 
 
-    Route::controller(ElemenController::class)->group(function(){
-        Route::get('/elemen/{id}','index');
-    });
 
 
-    Route::controller(PaketSkemaController::class)->group(function () {
-        Route::get('/paketskema', 'index');
-        Route::get('/paketasesmen/user/{id}', 'showAllUser');
-        Route::post('/paketskema', 'store');
-        Route::put('/paketskema/{id}', 'edit');
-        Route::delete('/paketskema/{id}', 'destroy');
-    });
+
+
 
     Route::controller(TukController::class)->group(function(){
         Route::get('/tuk','index');
@@ -96,14 +88,27 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/hasilak01/{id}','show');
         Route::get('/detail-ak01/{id}','detail');
     });
-    Route::controller(HasilIa01Controller::class)->group(function(){
-        Route::post('hasilia01','store');
-    });
+
     Route::controller(SchemaController::class)->group(function () {
         Route::get('/schema', 'index');
         Route::get('/schema/{id}', 'show');
         Route::get('/whatSchema/{id}', 'showSchema');
         Route::get('/turunanSkema/{id}', 'detailSchema');
     });
+    Route::controller(ElemenController::class)->group(function(){
+        Route::get('/elemen/{id}','index');
+        Route::get('/sub-elemen/{id}','showSubElemen');
+    });
+    Route::controller(HasilIa01Controller::class)->group(function(){
+        Route::post('hasilia01','store');
+        Route::get('hasilia01/{id}','show');
+    });
 });  
 
+Route::controller(PaketSkemaController::class)->group(function () {
+    Route::get('/paketskema', 'index');
+    Route::get('/paketasesmen/user/{id}', 'showAllUser');
+    Route::post('/paketskema', 'store');
+    Route::put('/paketskema/{id}', 'edit');
+    Route::delete('/paketskema/{id}', 'destroy');
+});
