@@ -19,4 +19,7 @@ class UnitKompetensi extends Model
     public function elemens() {
         return $this->hasMany(Elemen::class);
     }
+    public function pertanyaans() {
+        return $this->hasMany(Pertanyaan::class);
+    }
 }

@@ -65,7 +65,8 @@ class DatabaseSeeder extends Seeder
         SesiSeeder::class,
         // PaketAsesmenSeeder::class,
         ElemenSeeder::class,
-        SubElemenSeeder::class
+        SubElemenSeeder::class,
+        PertanyaanSeeder::class,
     ]);
     }
 }

@@ -15,6 +15,8 @@ use App\Http\Controllers\PaketAsesmenController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HasilAk01Controller;
 use App\Http\Controllers\HasilIa01Controller;
+use App\Http\Controllers\HasilIa07Controller;
+use App\Http\Controllers\Pertanyaania07Controller;
 use App\Http\Controllers\SesiController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\UnitKompetensiController;
@@ -103,12 +105,19 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::post('hasilia01','store');
         Route::get('hasilia01/{id}','show');
     });
+    Route::controller(Pertanyaania07Controller::class)->group(function(){
+        Route::get('pertanyaania07/{id}','index');
+    });
+    Route::controller(PaketSkemaController::class)->group(function () {
+        Route::get('/paketskema', 'index');
+        Route::get('/paketasesmen/user/{id}', 'showAllUser');
+        Route::post('/paketskema', 'store');
+        Route::put('/paketskema/{id}', 'edit');
+        Route::delete('/paketskema/{id}', 'destroy');
+    });
 });  
-
-Route::controller(PaketSkemaController::class)->group(function () {
-    Route::get('/paketskema', 'index');
-    Route::get('/paketasesmen/user/{id}', 'showAllUser');
-    Route::post('/paketskema', 'store');
-    Route::put('/paketskema/{id}', 'edit');
-    Route::delete('/paketskema/{id}', 'destroy');
+Route::controller(HasilIa07Controller::class)->group(function(){
+    Route::post('hasilia07','store');
+    Route::get('hasilia07/{id}','show');
 });
+
