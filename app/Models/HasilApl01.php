@@ -35,5 +35,11 @@ class HasilApl01 extends Model
     public function hasil_ak01 () {
         return $this->hasOne(HasilAk01::class);
     }
+    public function hasil_ia01 () {
+        return $this->hasOne(HasilIa01::class);
+    }
+    public function hasil_ia07 () {
+        return $this->hasOne(HasilIa07::class);
+    }
 
 }

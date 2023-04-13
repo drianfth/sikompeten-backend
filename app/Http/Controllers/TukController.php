@@ -12,4 +12,10 @@ class TukController extends Controller
         $tuk = Tuk::all();
         return response()->json($tuk);
     }
+    public function store (Request $request) {
+        // $tuk = Tuk::all();
+        $data = collect($request)->toArray();
+        $tuk = TUK::create($data);
+        return response()->json($tuk);
+    }
 }

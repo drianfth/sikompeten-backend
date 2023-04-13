@@ -4,21 +4,22 @@ use App\Models\PaketSkema;
 use Illuminate\Http\Request;
 use App\Models\UnitKompetensi;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TukController;
+use App\Http\Controllers\SesiController;
 use App\Http\Controllers\ElemenController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\SchemaController;
+use App\Http\Controllers\HasilAk01Controller;
+use App\Http\Controllers\HasilIa01Controller;
+use App\Http\Controllers\HasilIa03Controller;
+use App\Http\Controllers\HasilIa07Controller;
 use App\Http\Controllers\HasilApl01Controller;
 use App\Http\Controllers\HasilApl02Controller;
 use App\Http\Controllers\PaketSkemaController;
 use App\Http\Controllers\KelengkapanController;
 use App\Http\Controllers\PaketAsesmenController;
 use App\Http\Controllers\AuthenticationController;
-use App\Http\Controllers\HasilAk01Controller;
-use App\Http\Controllers\HasilIa01Controller;
-use App\Http\Controllers\HasilIa07Controller;
 use App\Http\Controllers\Pertanyaania07Controller;
-use App\Http\Controllers\SesiController;
-use App\Http\Controllers\TukController;
 use App\Http\Controllers\UnitKompetensiController;
 
 /*
@@ -56,9 +57,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
 
 
 
-    Route::controller(TukController::class)->group(function(){
-        Route::get('/tuk','index');
-    });
+ 
 
     Route::controller(SesiController::class)->group(function(){
         Route::get('/sesi/{id}','show');
@@ -115,9 +114,17 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::put('/paketskema/{id}', 'edit');
         Route::delete('/paketskema/{id}', 'destroy');
     });
+    Route::controller(HasilIa07Controller::class)->group(function(){
+        Route::post('hasilia07','store');
+        Route::get('hasilia07/{id}','show');
+    });
 });  
-Route::controller(HasilIa07Controller::class)->group(function(){
-    Route::post('hasilia07','store');
-    Route::get('hasilia07/{id}','show');
+Route::controller(HasilIa03Controller::class)->group(function(){
+    Route::post('hasilia03','store');
+    Route::get('pertanyaania03/{id}','showPertanyaan');
 });
 
+Route::controller(TukController::class)->group(function(){
+    Route::get('/tuk','index');
+    Route::post('/tuk','store');
+});
