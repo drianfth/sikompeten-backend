@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('hasil_ia03_id');
             $table->unsignedBigInteger('unit_kompetensi_id');
-            $table->string('umpan_balik');
+            $table->string('umpan_balik')->nullable();
             $table->timestamps();
 
             $table->foreign('hasil_ia03_id')->references('id')->on('hasil_ia03s');
