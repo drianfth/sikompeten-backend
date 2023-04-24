@@ -121,6 +121,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
 });  
 Route::controller(HasilIa03Controller::class)->group(function(){
     Route::post('hasilia03','store');
+    Route::get('hasilia03/{id}','showDetail');
     Route::get('pertanyaania03/{id}','showPertanyaan');
 });
 

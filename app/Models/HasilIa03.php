@@ -23,6 +23,9 @@ class HasilIa03 extends Model
     public function hasil_apl01 () {
         return $this->belongsTo(HasilApl01::class);
     }
+    public function jawaban_ia03s () {
+        return $this->hasMany(JawabanIa03::class);
+    }
     public function jawaban_unit_ia03s () {
         return $this->hasMany(JawabanUnitIa03::class);
     }

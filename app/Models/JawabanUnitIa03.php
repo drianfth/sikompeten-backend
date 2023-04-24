@@ -17,4 +17,7 @@ class JawabanUnitIa03 extends Model
     public function hasil_ia03(){
         return $this->belongsTo(HasilIa03::class);
     }
+    public function unit_kompetensi(){
+        return $this->belongsTo(UnitKompetensi::class);
+    }
 }

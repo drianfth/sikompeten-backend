@@ -61,4 +61,18 @@ class HasilIa03Controller extends Controller
         });
         return response()->json($result);
     }
+
+    public function showDetail($id){
+        $result = HasilIa03::where('hasil_apl01_id', $id)->get();
+        $result[0]->jawaban_ia03s->map(function($jawab){
+            $jawab->pertanyaania03->unit_kompetensi;
+        });
+        $result[0]->jawaban_unit_ia03s->map(function($jawab){
+            $jawab->unit_kompetensi;
+        });
+        $result[0]->hasil_ak01;
+        $result[0]->hasil_apl01;
+        $result[0]->sesi->paket_skema;
+        return response()->json($result);
+    }
 }
