@@ -50,13 +50,6 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/kelengkapan/{id}',[KelengkapanController::class,'index']);
     Route::get('/asesor',[AuthenticationController::class,'showAsesor']);
     Route::get('/whoUser/{id}',[AuthenticationController::class,'showUser']);
-
-
-
-
-
-
-
  
 
     Route::controller(SesiController::class)->group(function(){
@@ -69,19 +62,15 @@ Route::middleware(['auth:sanctum'])->group(function(){
     
     });
 
-    Route::controller(HasilApl01Controller::class)->group(function(){
-        Route::post('/hasilapl01','store');
-        Route::get('/hasilapl01/{id}','show');
-        Route::put('/hasilapl01/{id}', 'edit');
-        Route::put('/assignAsesor/{id}', 'assign');
-        Route::get('/hasilapl01lengkap/{id}','showDetail');
-    });
+
+
     Route::controller(HasilApl02Controller::class)->group(function(){
         Route::post('/hasilapl02','store');
         Route::get('/hasilapl02/{id}','show');
         Route::put('/hasilapl02/{id}', 'edit');
         Route::get('/hasilapl02lengkap/{id}','showDetail');
     });
+
     Route::controller(HasilAk01Controller::class)->group(function(){
         Route::post('/hasilak01','store');
         Route::put('/hasilak01/{id}', 'edit');
@@ -114,16 +103,26 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::put('/paketskema/{id}', 'edit');
         Route::delete('/paketskema/{id}', 'destroy');
     });
+
     Route::controller(HasilIa07Controller::class)->group(function(){
         Route::post('hasilia07','store');
         Route::get('hasilia07/{id}','show');
     });
+    Route::controller(HasilIa03Controller::class)->group(function(){
+        Route::post('hasilia03','store');
+        Route::get('hasilia03/{id}','showDetail');
+        Route::get('pertanyaania03/{id}','showPertanyaan');
+    });
+    Route::controller(HasilApl01Controller::class)->group(function(){
+        Route::post('/hasilapl01','store');
+        Route::get('/hasilapl01/{id}','show');
+        Route::put('/hasilapl01/{id}', 'edit');
+        Route::put('/assignAsesor/{id}', 'assign');
+        Route::get('/hasilapl01lengkap/{id}','showDetail');
+        Route::get('/list-apl01/{id}','showList');
+    });
+
 });  
-Route::controller(HasilIa03Controller::class)->group(function(){
-    Route::post('hasilia03','store');
-    Route::get('hasilia03/{id}','showDetail');
-    Route::get('pertanyaania03/{id}','showPertanyaan');
-});
 
 Route::controller(TukController::class)->group(function(){
     Route::get('/tuk','index');

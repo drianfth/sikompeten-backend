@@ -85,4 +85,11 @@ class HasilApl01Controller extends Controller
         return response()->json($result);
 
     }
+    public function showList($id){
+        $data = HasilApl01::where('user_id', $id)->get();
+        $data->map(function($d){
+            $d->sesi->paket_skema;
+        });
+        return response()->json($data);
+    }
 }
