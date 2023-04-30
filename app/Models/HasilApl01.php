@@ -26,7 +26,7 @@ class HasilApl01 extends Model
         return $this->hasMany(RKelengkapan::class);
     }
     
-    public function asesor_id () {
+    public function asesor() {
         return $this->belongsTo(User::class);
     }
     public function hasil_apl02 () {
