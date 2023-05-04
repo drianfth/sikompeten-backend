@@ -20,6 +20,7 @@ use App\Http\Controllers\KelengkapanController;
 use App\Http\Controllers\PaketAsesmenController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HasilAk02Controller;
+use App\Http\Controllers\HasilAk03Controller;
 use App\Http\Controllers\Pertanyaania07Controller;
 use App\Http\Controllers\UnitKompetensiController;
 
@@ -122,12 +123,17 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/hasilapl01lengkap/{id}','showDetail');
         Route::get('/list-apl01/{id}','showList');
     });
-    
+    Route::controller(HasilAk02Controller::class)->group(function(){
+        Route::post('/hasilak02','store');
+        Route::get('/hasilak02/{id}','show');
+        Route::get('/detailapl01/{id}','showApl01');
+    });
 });  
-Route::controller(HasilAk02Controller::class)->group(function(){
-    Route::post('/hasilak02','store');
-    Route::get('/hasilak02/{id}','show');
-    Route::get('/detailapl01/{id}','showApl01');
+Route::controller(HasilAk03Controller::class)->group(function(){
+    Route::post('/hasilak03','store');
+    Route::get('/hasilak03/{id}','show');
+    Route::get('/komponen-dan-apl01/{id}','showKomponenApl01');
+    // Route::get('/detailapl01/{id}','showApl01');
 });
 
 
