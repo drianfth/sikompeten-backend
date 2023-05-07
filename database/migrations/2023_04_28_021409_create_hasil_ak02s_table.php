@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('hasil_ak02s', function (Blueprint $table) {
             $table->id();
             $table->string('hasil_apl01_id');
+            $table->unsignedBigInteger('sesi_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('asesor_id')->nullable();
             $table->date('tanggal_mulai')->nullable();
@@ -28,6 +29,7 @@ return new class extends Migration
             $table->foreign('hasil_apl01_id')->references('id')->on('hasil_apl01s');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('asesor_id')->references('id')->on('users');
+            $table->foreign('sesi_id')->references('id')->on('sesis');
 
         });
     }

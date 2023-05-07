@@ -47,4 +47,8 @@ class HasilIa07Controller extends Controller
         });
         return response()->json($result);
     }
+    public function index($id){
+        $result = HasilIa07::where("sesi_id",$id)->get();
+        return response()->json($result);
+    }
 }

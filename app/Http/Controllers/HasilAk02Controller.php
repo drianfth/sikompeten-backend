@@ -7,7 +7,7 @@ use App\Models\HasilApl01;
 use App\Models\JawabanAk02;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-
+use Illuminate\Support\Facades\DB;
 
 class HasilAk02Controller extends Controller
 {
@@ -58,5 +58,10 @@ class HasilAk02Controller extends Controller
         });
 
         return response()->json($data[0]);
+    }
+
+    public function index($id){
+        $result = HasilAk02::where("sesi_id",$id)->get();
+        return response()->json($result);
     }
 }

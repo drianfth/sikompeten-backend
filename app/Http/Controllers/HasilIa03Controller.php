@@ -75,4 +75,8 @@ class HasilIa03Controller extends Controller
         $result[0]->sesi->paket_skema;
         return response()->json($result);
     }
+    public function index($id){
+        $result = HasilIa03::where("sesi_id",$id)->get();
+        return response()->json($result);
+    }
 }
