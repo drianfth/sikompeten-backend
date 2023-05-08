@@ -68,6 +68,7 @@ class DatabaseSeeder extends Seeder
         SubElemenSeeder::class,
         PertanyaanSeeder::class,
         KomponenSeeder::class,
+        KegiatanAsesmenSeeder::class,
     ]);
     }
 }

@@ -21,6 +21,7 @@ use App\Http\Controllers\PaketAsesmenController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HasilAk02Controller;
 use App\Http\Controllers\HasilAk03Controller;
+use App\Http\Controllers\HasilIa11Controller;
 use App\Http\Controllers\Pertanyaania07Controller;
 use App\Http\Controllers\UnitKompetensiController;
 
@@ -136,11 +137,17 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('hasilia03/{id}','showDetail');
         Route::get('pertanyaania03/{id}','showPertanyaan');
     });
+    Route::controller(HasilIa07Controller::class)->group(function(){
+        Route::get('/daftar-hasilIa07/{id}','index');
+        Route::post('hasilia07','store');
+        Route::get('hasilia07/{id}','show');
+    });
 });  
 
-Route::controller(HasilIa07Controller::class)->group(function(){
-    Route::get('/daftar-hasilIa07/{id}','index');
-    Route::post('hasilia07','store');
+Route::controller(HasilIa11Controller::class)->group(function(){
+    Route::get('/daftar-hasilIa11/{id}','index');
+    Route::get('/unit-kegiatan/{id}','showUnitKegiatan');
+    Route::post('hasilia11','store');
     Route::get('hasilia07/{id}','show');
 });
 
