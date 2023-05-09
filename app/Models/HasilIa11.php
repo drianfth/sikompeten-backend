@@ -23,7 +23,7 @@ class HasilIa11 extends Model
     public function hasil_apl01 () {
         return $this->belongsTo(HasilApl01::class);
     }
-    public function jawaban_ia07s () {
-        return $this->hasMany(JawabanIa07::class);
+    public function jawaban_ia11s () {
+        return $this->hasMany(JawabanIa11::class);
     }
 }

@@ -48,4 +48,17 @@ class HasilIa11Controller extends Controller
             "kegiatan_asesmen" => $kegiatanAsesmen,
         ]);
     }
+    public function show($id){
+        $resultData = HasilIa11::where('hasil_apl01_id',$id)->get();
+        $resultData[0]->jawaban_ia11s->map(function($jawaban){
+            $jawaban->kegiatan_asesmen;
+        });
+        $resultData[0]->hasil_apl01;
+        $unitKompetensi = UnitKompetensi::where("schema_id",$resultData[0]['hasil_apl01']['schema_id'])->get();
+
+        return response()->json([
+            'result' => $resultData,
+            'unitKompetensis' => $unitKompetensi,
+        ]);
+    }
 }

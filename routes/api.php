@@ -148,7 +148,7 @@ Route::controller(HasilIa11Controller::class)->group(function(){
     Route::get('/daftar-hasilIa11/{id}','index');
     Route::get('/unit-kegiatan/{id}','showUnitKegiatan');
     Route::post('hasilia11','store');
-    Route::get('hasilia07/{id}','show');
+    Route::get('hasilia11/{id}','show');
 });
 
 Route::controller(TukController::class)->group(function(){
