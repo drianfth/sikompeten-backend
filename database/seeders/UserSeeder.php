@@ -38,6 +38,7 @@ class UserSeeder extends Seeder
             'email' => 'rengga@gmail.com',
             'password' => Hash::make('password',),
             'role' => 'asesor',
+            'no_reg' => '23283ees',
             'jns_kelamin'=> 'laki_laki',
             'no_telp' => "08782378232",
         ]);
@@ -46,6 +47,7 @@ class UserSeeder extends Seeder
             'email' => 'fadilah@gmail.com',
             'password' => Hash::make('password',),
             'role' => 'asesor',
+            'no_reg' => '113553ees',
             'jns_kelamin'=> 'laki_laki',
             'no_telp' => "08782378232",
         ]);

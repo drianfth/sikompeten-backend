@@ -21,6 +21,7 @@ use App\Http\Controllers\PaketAsesmenController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HasilAk02Controller;
 use App\Http\Controllers\HasilAk03Controller;
+use App\Http\Controllers\HasilAk05Controller;
 use App\Http\Controllers\HasilIa11Controller;
 use App\Http\Controllers\Pertanyaania07Controller;
 use App\Http\Controllers\UnitKompetensiController;
@@ -55,15 +56,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/whoUser/{id}',[AuthenticationController::class,'showUser']);
  
 
-    Route::controller(SesiController::class)->group(function(){
-        Route::get('/sesi/{id}','show');
-        Route::get('/whosesi/{id}','showNow');
-        Route::post('/sesi', 'store');
-        Route::put('/sesi/{id}', 'edit');
-        Route::delete('/sesi/{id}', 'destroy');
-        Route::get('/sesi/peserta/{id}', 'showPeserta');
-    
-    });
+
 
 
 
@@ -82,12 +75,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/detail-ak01/{id}','detail');
     });
 
-    Route::controller(SchemaController::class)->group(function () {
-        Route::get('/schema', 'index');
-        Route::get('/schema/{id}', 'show');
-        Route::get('/whatSchema/{id}', 'showSchema');
-        Route::get('/turunanSkema/{id}', 'detailSchema');
-    });
+
     Route::controller(ElemenController::class)->group(function(){
         Route::get('/elemen/{id}','index');
         Route::get('/sub-elemen/{id}','showSubElemen');
@@ -142,13 +130,33 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::post('hasilia07','store');
         Route::get('hasilia07/{id}','show');
     });
-});  
+    Route::controller(HasilIa11Controller::class)->group(function(){
+        Route::get('/daftar-hasilIa11/{id}','index');
+        Route::get('/unit-kegiatan/{id}','showUnitKegiatan');
+        Route::post('hasilia11','store');
+        Route::get('hasilia11/{id}','show');
+    });
+    Route::controller(SesiController::class)->group(function(){
+        Route::get('/sesi/{id}','show');
+        Route::get('/whosesi/{id}','showNow');
+        Route::post('/sesi', 'store');
+        Route::put('/sesi/{id}', 'edit');
+        Route::delete('/sesi/{id}', 'destroy');
+        Route::get('/sesi/peserta/{id}', 'showPeserta');
+    
+    });
+    Route::controller(SchemaController::class)->group(function () {
+        Route::get('/schema', 'index');
+        Route::get('/schema/{id}', 'show');
+        Route::get('/whatSchema/{id}', 'showSchema');
+        Route::get('/turunanSkema/{id}', 'detailSchema');
+    });
+}); 
 
-Route::controller(HasilIa11Controller::class)->group(function(){
-    Route::get('/daftar-hasilIa11/{id}','index');
-    Route::get('/unit-kegiatan/{id}','showUnitKegiatan');
-    Route::post('hasilia11','store');
-    Route::get('hasilia11/{id}','show');
+
+Route::controller(HasilAk05Controller::class)->group(function(){
+    Route::get('/asesiUnit','showAsesi');
+    Route::post('/hasilak05','store');
 });
 
 Route::controller(TukController::class)->group(function(){
