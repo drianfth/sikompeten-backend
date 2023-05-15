@@ -155,7 +155,8 @@ Route::middleware(['auth:sanctum'])->group(function(){
 
 
 Route::controller(HasilAk05Controller::class)->group(function(){
-    Route::get('/asesiUnit','showAsesi');
+    Route::get('/hasilak05/{id1}/{id2}','show');
+    Route::get('/asesiAsesor/{id1}/{id2}','showAsesi');
     Route::post('/hasilak05','store');
 });
 

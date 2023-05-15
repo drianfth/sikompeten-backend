@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\HasilAk05;
+use App\Models\HasilApl01;
 use App\Models\JawabanAk05;
+use App\Models\UnitKompetensi;
 use Illuminate\Http\Request;
 
 class HasilAk05Controller extends Controller
@@ -34,7 +36,33 @@ class HasilAk05Controller extends Controller
         ]);
     }
 
-    public function showAsesi(){
-        
+    public function showAsesi($id1,$id2){
+        $result = collect(HasilApl01::where('sesi_id',$id1)->where('asesor_id',$id2)->get());
+        if ($result->isEmpty()) {
+            return response()->json([]);
+        }
+        return response()->json($result);
+    }
+
+    public function show($id1,$id2){
+        $result = HasilAk05::where('sesi_id',$id1)->where('asesor_id',$id2)->get();
+        if ($result->isEmpty()) {
+            return response()->json([
+                'result'=> [],
+            ]);
+        }
+        $unit_kompetensi = UnitKompetensi::where('schema_id',$result[0]->schema_id)->get();
+
+        $result[0]->sesi;
+        $result[0]->paket_skema;
+        $result[0]->asesor;
+        $result[0]->schema;
+        $result[0]->jawaban_ak05s->map(function($jawaban){
+            $jawaban->hasil_apl01;
+        });
+        return response()->json([
+            'result' =>$result[0],
+            'unit_kompetensi' => $unit_kompetensi 
+        ]);
     }
 }

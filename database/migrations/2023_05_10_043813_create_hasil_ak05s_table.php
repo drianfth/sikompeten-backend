@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('paket_skema_id');
             $table->unsignedBigInteger('asesor_id');
             $table->unsignedBigInteger('schema_id');
+            $table->unsignedBigInteger('sesi_id');
             $table->string('tuk');
             $table->string('catatan');
             $table->string('aspek_asesmen');
@@ -27,6 +28,7 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('asesor_id')->references('id')->on('users');
             $table->foreign('schema_id')->references('id')->on('schemas');
+            $table->foreign('sesi_id')->references('id')->on('sesis');
             $table->foreign('paket_skema_id')->references('id')->on('paket_skemas');
         });
     }

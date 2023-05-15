@@ -11,4 +11,19 @@ class HasilAk05 extends Model
     protected $guarded = [
         'id'
     ];
+    public function sesi(){
+        return $this->belongsTo(Sesi::class);
+    }
+    public function paket_skema(){
+        return $this->belongsTo(PaketSkema::class);
+    }
+    public function asesor(){
+        return $this->belongsTo(User::class);
+    }
+    public function schema(){
+        return $this->belongsTo(Schema::class);
+    }
+    public function jawaban_ak05s () {
+        return $this->hasMany(JawabanAk05::class);
+    }
 }
