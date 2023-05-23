@@ -22,6 +22,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\HasilAk02Controller;
 use App\Http\Controllers\HasilAk03Controller;
 use App\Http\Controllers\HasilAk05Controller;
+use App\Http\Controllers\HasilAk06Controller;
 use App\Http\Controllers\HasilIa11Controller;
 use App\Http\Controllers\Pertanyaania07Controller;
 use App\Http\Controllers\UnitKompetensiController;
@@ -151,13 +152,17 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/whatSchema/{id}', 'showSchema');
         Route::get('/turunanSkema/{id}', 'detailSchema');
     });
+    Route::controller(HasilAk05Controller::class)->group(function(){
+        Route::get('/hasilak05/{id1}/{id2}','show');
+        Route::get('/asesiAsesor/{id1}/{id2}','showAsesi');
+        Route::post('/hasilak05','store');
+    });
 }); 
 
-
-Route::controller(HasilAk05Controller::class)->group(function(){
-    Route::get('/hasilak05/{id1}/{id2}','show');
-    Route::get('/asesiAsesor/{id1}/{id2}','showAsesi');
-    Route::post('/hasilak05','store');
+Route::controller(HasilAk06Controller::class)->group(function(){
+    Route::get('/hasilak06/{id1}/{id2}','show');
+    Route::get('/data-prosuder-keputusan','showData');
+    Route::post('/hasilak06','store');
 });
 
 Route::controller(TukController::class)->group(function(){

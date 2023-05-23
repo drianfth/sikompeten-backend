@@ -51,6 +51,7 @@ class HasilAk05Controller extends Controller
                 'result'=> [],
             ]);
         }
+        
         $unit_kompetensi = UnitKompetensi::where('schema_id',$result[0]->schema_id)->get();
 
         $result[0]->sesi;
@@ -65,4 +66,6 @@ class HasilAk05Controller extends Controller
             'unit_kompetensi' => $unit_kompetensi 
         ]);
     }
+
+
 }
