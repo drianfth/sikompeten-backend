@@ -24,6 +24,7 @@ use App\Http\Controllers\HasilAk03Controller;
 use App\Http\Controllers\HasilAk05Controller;
 use App\Http\Controllers\HasilAk06Controller;
 use App\Http\Controllers\HasilIa11Controller;
+use App\Http\Controllers\Ia02Controller;
 use App\Http\Controllers\Pertanyaania07Controller;
 use App\Http\Controllers\UnitKompetensiController;
 
@@ -157,12 +158,17 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/asesiAsesor/{id1}/{id2}','showAsesi');
         Route::post('/hasilak05','store');
     });
+    Route::controller(HasilAk06Controller::class)->group(function(){
+        Route::get('/hasilak06/{id1}/{id2}','show');
+        Route::get('/data-prosuder-keputusan','showData');
+        Route::post('/hasilak06','store');
+    });
 }); 
 
-Route::controller(HasilAk06Controller::class)->group(function(){
-    Route::get('/hasilak06/{id1}/{id2}','show');
-    Route::get('/data-prosuder-keputusan','showData');
-    Route::post('/hasilak06','store');
+Route::controller(Ia02Controller::class)->group(function(){
+    Route::get('/ia02/{filename}','preview');
+    // Route::get('/data-prosuder-keputusan','showData');
+    Route::post('/ia02','upload');
 });
 
 Route::controller(TukController::class)->group(function(){
