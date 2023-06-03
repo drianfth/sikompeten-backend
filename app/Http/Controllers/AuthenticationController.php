@@ -67,6 +67,10 @@ class AuthenticationController extends Controller
         $asesor = User::where('role','asesor')->get();
         return response()->json($asesor);
     }
+    public function showAdmin(){
+        $asesor = User::where('role','admin')->get();
+        return response()->json($asesor);
+    }
     public function showUser($id){
         $asesor = User::where('id',$id)->get();
         return response()->json($asesor);

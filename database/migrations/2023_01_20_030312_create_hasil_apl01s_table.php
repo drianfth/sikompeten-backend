@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('sesi_id');
             $table->unsignedBigInteger('asesor_id')->nullable();
+            $table->unsignedBigInteger('admin_id')->nullable();
             $table->boolean('konfirmasi')->default(false);
             $table->string('name');
             $table->string('kk_ktp_paspor');
@@ -54,6 +55,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('sesi_id')->references('id')->on('sesis');
             $table->foreign('asesor_id')->references('id')->on('users');
+            $table->foreign('admin_id')->references('id')->on('users');
 
         });
     }

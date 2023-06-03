@@ -44,10 +44,17 @@ class HasilAk01Controller extends Controller
     public function show($id){
         $result = HasilAk01::where('asesi_id',$id)->get();
         // dd($result);
+        if ($result->isEmpty()) {
+            return response()->json([
+                'result' => [],
+            ]);
+        }
         $result[0]->sesi->paket_skema->schema;
         $result[0]->sesi->paket_skema->tuk;
         $result[0]->asesor;
-        return response()->json($result);
+        return response()->json([
+            'result' => $result[0]
+        ]);
     }
     public function detail($id){
         $result = HasilAk01::where('hasil_apl01_id',$id)->get();

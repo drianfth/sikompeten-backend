@@ -24,6 +24,7 @@ class HasilApl01Controller extends Controller
         $result = HasilApl01::where('id',$id)->get();
         $result[0]->schema;
         $result[0]->asesor;
+        $result[0]->admin;
         $result[0]->sesi->asesor1;
         $result[0]->sesi->asesor2;
         $result[0]->r_kelengkapans->map(function($hasil){

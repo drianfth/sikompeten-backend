@@ -29,6 +29,9 @@ class HasilApl01 extends Model
     public function asesor() {
         return $this->belongsTo(User::class);
     }
+    public function admin() {
+        return $this->belongsTo(User::class);
+    }
     public function hasil_apl02 () {
         return $this->hasOne(HasilApl02::class);
     }

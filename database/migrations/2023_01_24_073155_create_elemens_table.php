@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('unit_kompetensi_id');
             $table->unsignedBigInteger('schema_id');
             $table->string('name');
+            $table->string('sop')->nullable();
             $table->timestamps();
 
             $table->foreign('unit_kompetensi_id')->references('id')->on('unit_kompetensis');

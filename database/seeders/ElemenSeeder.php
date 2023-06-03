@@ -19,17 +19,22 @@ class ElemenSeeder extends Seeder
             "schema_id" => 1,
             'unit_kompetensi_id' => 1,
             'name'=> 'Mengidentifikasi metode penjaminan kualitas proses dan produk pengembangan perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 1,
             'name'=> 'Menentukan metode penjaminan kualitas proses dan produk pengembangan perangkat lunak  
             ',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 1,
             'name'=> 'Menganalisis acuan-acuan penjaminan kualitas perangka lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
@@ -41,11 +46,15 @@ class ElemenSeeder extends Seeder
             "schema_id" => 1,
             'unit_kompetensi_id' => 2,
             'name'=> 'Menyusun metrik kualitas proses pengembangan perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 2,
             'name'=> 'Menentukan batasan aktivitas penjaminan proses pengembangan perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
@@ -57,48 +66,66 @@ class ElemenSeeder extends Seeder
             'unit_kompetensi_id' => 2,
             'name'=> 'Menentukan keluaran (deliverable) dari review kualitas proses pengembangan perangkat lunak
             ',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 3,
             'name'=> 'Menggali kebutuhan kualitas proses pengembangan perangkat lunak yang ditentukan
             ',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
        
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 3,
             'name'=> 'Menyusun metrik kualitas proses pengembangan perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 3,
             'name'=> 'Menentukan batasan aktivitas penjaminan proses pengembangan perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 3,
             'name'=> 'Menentukan batasan nilai metrik kualitas proses pengembangan perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 3,
             'name'=> 'Menentukan keluaran (deliverable) dari review kualitas proses pengembangan perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 4,
             'name'=> 'Melakukan identifikasi risiko jika proses penjaminan perangkatlunak tidak dilakukan',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 4,
             'name'=> 'Melakukan identifikasi risiko bisnis yang terkait dengan review kualitas proses dan produk perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 4,
             'name'=> 'Merencanakan mitigasi risiko',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
@@ -114,26 +141,36 @@ class ElemenSeeder extends Seeder
             "schema_id" => 1,
             'unit_kompetensi_id' => 6,
             'name'=> 'Menentukan struktur pemanfaatan sumber daya yang sesuai dengan organisasi',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 6,
             'name'=> 'Menentukan pembagian tugas dan tanggung jawab SDM dalam pelaksanaan penjaminan kualitas',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 6,
             'name'=> 'Menyusun prosedur acuan pelaksanaan penjaminan kualitas PL',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 7,
             'name'=> ' Mengumpulkan hasil tahapan pengembangan',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 7,
             'name'=> 'Menghitung nilai metriks berdasarkan data-data tersedia',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
@@ -154,31 +191,42 @@ class ElemenSeeder extends Seeder
             "schema_id" => 1,
             'unit_kompetensi_id' => 9,
             'name'=> 'Melaksanakan review kode sumber otomatis',
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 10,
             'name'=> 'Menentukan aspek keamanan perangkat lunak yang akan diuji',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 10,
             'name'=> 'Melaksanakan pengujian keamanan',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 10,
             'name'=> 'Menilai kebijakan mengenai keamanan yang digunakan',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 11,
             'name'=> 'Membuat rekomendasi penjaminan perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 1,
             'unit_kompetensi_id' => 11,
             'name'=> 'Mentrasfer pengalaman penjaminan kualitas perangkat lunak',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
         Elemen::create([
             "schema_id" => 2,
@@ -194,6 +242,8 @@ class ElemenSeeder extends Seeder
             "schema_id" => 2,
             'unit_kompetensi_id' => 3,
             'name'=> 'Menginstal protokol TCP/IP',
+            'sop' => 'Produk Harus berkualitas layak untuk diuji coba'
+        
         ]);
     }
 }

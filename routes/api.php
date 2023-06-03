@@ -55,6 +55,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/unit_kompetensi/{id}',[UnitKompetensiController::class,'index']);
     Route::get('/kelengkapan/{id}',[KelengkapanController::class,'index']);
     Route::get('/asesor',[AuthenticationController::class,'showAsesor']);
+    Route::get('/admin',[AuthenticationController::class,'showAdmin']);
     Route::get('/whoUser/{id}',[AuthenticationController::class,'showUser']);
  
 
