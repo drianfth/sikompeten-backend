@@ -59,10 +59,6 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/whoUser/{id}',[AuthenticationController::class,'showUser']);
  
 
-
-
-
-
     Route::controller(HasilApl02Controller::class)->group(function(){
         Route::post('/hasilapl02','store');
         Route::get('/hasilapl02/{id}','show');
@@ -77,7 +73,6 @@ Route::middleware(['auth:sanctum'])->group(function(){
         Route::get('/hasilak01/{id}','show');
         Route::get('/detail-ak01/{id}','detail');
     });
-
 
     Route::controller(ElemenController::class)->group(function(){
         Route::get('/elemen/{id}','index');
